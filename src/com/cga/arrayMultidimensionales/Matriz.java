@@ -29,14 +29,14 @@ public class Matriz {
         
     }
 
-    public static void ordenarMatriz(int[][] matriz){
+    public static int[][] ordenarMatriz(int[][] matriz){
 
         int aux = Integer.MIN_VALUE;
 
         for (int i=0 ; i<matriz.length; i++){
             for (int j=0 ; j<matriz[i].length; j++)
-                for(int k=0; k<matriz.length ; k++)
-                    for(int l=0; l<matriz[i].length ; l++)
+                for(int k=i; k<matriz.length ; k++)
+                    for(int l=j; l<matriz[i].length ; l++)
                         if (matriz[i][j] > matriz[k][l]){
                             aux = matriz[i][j];
                             matriz[i][j] = matriz[k][l];
@@ -49,19 +49,31 @@ public class Matriz {
             Arrays.sort(i);
         } */
 
-        System.out.println(Arrays.deepToString(matriz));
-        mostrarMatriz(matriz);
+        // System.out.println(Arrays.deepToString(matriz));
+        // mostrarMatriz(matriz);
 
+        return matriz;
+    }
+
+    public static void segundaColumna(int[][] matriz){
+
+        for (int i = 0; i < matriz.length;i++){
+            System.out.println(matriz[i][1] + "|");
+        }
     }
 
     public static void main(String[] args) {
         
         int[][] matriz = generarMatriz(5, 6);
-        System.out.println(Arrays.deepToString(matriz));
+        // System.out.println(Arrays.deepToString(matriz));
         
         mostrarMatriz(matriz);
         System.out.println();
         ordenarMatriz(matriz);
+        System.out.println();
+        mostrarMatriz(matriz);
+        System.out.println("\n");
+        segundaColumna(matriz);
 
     }
 
