@@ -35,12 +35,15 @@ public class Matriz {
 
         for (int i=0 ; i<matriz.length; i++){
             for (int j=0 ; j<matriz[i].length; j++)
-                for(int k=i; k<matriz.length ; k++)
-                    for(int l=j; l<matriz[i].length ; l++)
-                        if (matriz[i][j] > matriz[k][l]){
+                for(int k=0 ; k<matriz.length ; k++)
+                    for(int l=0 ; l<matriz[i].length ; l++)
+                        if (matriz[i][j] < matriz[k][l]){
                             aux = matriz[i][j];
                             matriz[i][j] = matriz[k][l];
                             matriz[k][l] = aux;
+                            // mostrarMatriz(matriz);
+                            // System.out.println("AQui " + " i:" + i + " j:" + j + " k:" + k + " j:" + j);
+
                         }
         }
                 
@@ -62,10 +65,26 @@ public class Matriz {
         }
     }
 
+    public static void sumaMaxFila(int[][] matriz){
+
+        int[] arrNum = matriz[matriz.length - 1];
+        int suma = 0;
+
+        for(int n:arrNum){
+            suma += n;
+        }
+
+        System.out.println("La suma de la fila Max: " + suma);
+    }
+
+
+
     public static void main(String[] args) {
         
-        int[][] matriz = generarMatriz(5, 6);
-        // System.out.println(Arrays.deepToString(matriz));
+        int[][] matriz = generarMatriz(3, 3);
+        // int[][] matriz = {{9,5,8},{9,5,8},{9,5,8}};
+
+        System.out.println(Arrays.deepToString(matriz));
         
         mostrarMatriz(matriz);
         System.out.println();
@@ -74,6 +93,8 @@ public class Matriz {
         mostrarMatriz(matriz);
         System.out.println("\n");
         segundaColumna(matriz);
+        System.out.println("\n");
+        sumaMaxFila(matriz);
 
     }
 
