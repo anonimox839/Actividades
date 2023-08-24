@@ -77,7 +77,20 @@ public class Matriz {
         System.out.println("La suma de la fila Max: " + suma);
     }
 
+    public static void matrizString (){
 
+        String[][] arrStrings = {{"Tokio","Madrid","Valencia"},{"Guangzhou","HongKong","Shenzhen"},{"Moscu","Dubai","Sevilla"},{"Barcelona","Caracas","Seul"}};
+
+        for (int i = arrStrings.length-1; i >= 0 ; i--){
+            System.out.println();
+            System.out.print("[ ");
+            for (int j = arrStrings[i].length-1; j >= 0 ; j--){
+                System.out.print(arrStrings[i][j] + " , ");
+            }
+            System.out.print("]");
+        }
+            
+    }
 
     public static void main(String[] args) {
         
@@ -95,6 +108,8 @@ public class Matriz {
         segundaColumna(matriz);
         System.out.println("\n");
         sumaMaxFila(matriz);
+        System.out.println("\n");
+        matrizString();
 
     }
 
