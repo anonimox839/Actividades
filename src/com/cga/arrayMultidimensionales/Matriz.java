@@ -67,14 +67,17 @@ public class Matriz {
 
     public static void sumaMaxFila(int[][] matriz){
 
-        int[] arrNum = matriz[matriz.length - 1];
-        int suma = 0;
+        int suma;
 
-        for(int n:arrNum){
-            suma += n;
+        for(int[] fila:matriz){
+            suma = 0;
+            for(int columna:fila){
+                suma += columna;
+                System.out.print(columna + " ");
+            }
+            System.out.println(" = " + suma);
         }
 
-        System.out.println("La suma de la fila Max: " + suma);
     }
 
     public static void matrizString (){
