@@ -1,17 +1,17 @@
 package com.cga.arrayList;
 
-public class DatosPersona {
+public class Persona {
     
     private String nombre;
     private String apellido;
     private String DNI;
-    private String edad;
+    private int edad;
     private String calle;
     private int numCalle;
     private int cp;
     private String provincia;
 
-    public DatosPersona(String nombre, String apellido, String dNI, String edad, String calle, int numCalle, int cp,String provincia) {
+    public Persona(String nombre, String apellido, String dNI, int edad, String calle, int numCalle, int cp,String provincia) {
         this.nombre = nombre;
         this.apellido = apellido;
         DNI = dNI;
@@ -46,11 +46,11 @@ public class DatosPersona {
         DNI = dNI;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
@@ -84,6 +84,12 @@ public class DatosPersona {
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", DNI=" + DNI + ", edad=" + edad + ", calle="
+                + calle + ", numCalle=" + numCalle + ", cp=" + cp + ", provincia=" + provincia + "]";
     }
 
     
