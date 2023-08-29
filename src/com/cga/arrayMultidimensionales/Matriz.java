@@ -73,7 +73,7 @@ public class Matriz {
             suma = 0;
             for(int columna:fila){
                 suma += columna;
-                System.out.print(columna + " ");
+                System.out.printf("%2d ", columna);
             }
             System.out.println(" = " + suma);
         }
